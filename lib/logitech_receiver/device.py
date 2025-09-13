@@ -708,7 +708,7 @@ class Device:
                     # Check if device has keyboard capabilities
                     if evdev.ecodes.EV_KEY in device.capabilities():
                         # Look for devices that might be our G515 TKL
-                        if ("G515" in device.name or "Logitech" in device.name):
+                        if ("G515" in device.name or ("Logitech" in device.name and "Keyboard" in device.name)):
                             keyboard_devices.append(device)
                             if logger.isEnabledFor(logging.DEBUG):
                                 logger.debug("RGB refresh workaround: Found keyboard device: %s at %s", 
